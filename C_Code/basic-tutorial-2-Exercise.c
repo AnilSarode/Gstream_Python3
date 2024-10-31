@@ -1,11 +1,7 @@
 #include <gst/gst.h>
 
-#ifdef __APPLE__
-#include <TargetConditionals.h>
-#endif
 
-int
-tutorial_main (int argc, char *argv[])
+int tutorial_main (int argc, char *argv[])
 {
     GstElement *pipeline, *source, *sink, *filter, *convert;
     GstBus *bus;
@@ -86,12 +82,8 @@ tutorial_main (int argc, char *argv[])
     return 0;
 }
 
-int
-main (int argc, char *argv[])
+int main (int argc, char *argv[])
 {
-#if defined(__APPLE__) && TARGET_OS_MAC && !TARGET_OS_IPHONE
-    return gst_macos_main (tutorial_main, argc, argv, NULL);
-#else
+
     return tutorial_main (argc, argv);
-#endif
 }
