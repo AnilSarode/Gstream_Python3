@@ -47,6 +47,9 @@ int main(int argc, char *argv[]) {
   /* Set the URI to play */
   g_object_set (data.source, "uri", "https://gstreamer.freedesktop.org/data/media/sintel_trailer-480p.webm", NULL);
 
+  // g_object_set (data.source, "uri", "file:///home/anil/AIMLDL/Gstreamer_tutorial/test.mp4", NULL); for video source from the host machine
+
+
   /* Connect to the pad-added signal */
   g_signal_connect (data.source, "pad-added", G_CALLBACK (pad_added_handler), &data);
 
